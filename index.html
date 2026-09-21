@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi IA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding: 40px 20px;
+    }
 
+    .contenedor {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #222;
+    }
+
+    p {
+      color: #555;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      background: #111;
+      color: white;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1>🤖 Mi IA</h1>
+    <p>Escribe lo que necesitas y prepara tu idea.</p>
+
+    <textarea id="texto" placeholder="Escribe aquí..."></textarea>
+
+    <button onclick="generar()">Generar</button>
+
+    <p id="resultado"></p>
+  </div>
+
+  <script>
+    function generar() {
+      const texto = document.getElementById("texto").value;
+
+      if (texto.trim() === "") {
+        document.getElementById("resultado").innerText =
+          "Escribe algo primero.";
+        return;
+      }
+
+      document.getElementById("resultado").innerText =
+        "Tu solicitud fue recibida: " + texto;
+    }
+  </script>
+</body>
+</html>
